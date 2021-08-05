@@ -58,29 +58,29 @@ public class SodaControllerTest {
                 .build();
     }
 
-//    @Test
-//   // esse teste esta falhando, mas ao testar manualmente no postman não falha, tenho que descobrir por que
-//
-//
-//    void whenPOSTIsCalledWithoutRequiredFieldThenAnErrorIsReturned() throws Exception{
-//
-//
-//        SodaDTO beerDTO = SodaBuilderDTO.builder().build().toSodaDTO();
-//        beerDTO.setFlavor(null);
-//
-//        // then
+    @Test
+   // esse teste esta falhando, mas ao testar manualmente no postman não falha, tenho que descobrir por que
+
+
+    void whenPOSTIsCalledWithoutRequiredFieldThenAnErrorIsReturned() throws Exception{
+
+
+        SodaDTO beerDTO = SodaBuilderDTO.builder().build().toSodaDTO();
+        beerDTO.setFlavor(null);
+
+        // then
+        mockMvc.perform(post(SODA_API_URL_PATH)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(beerDTO)))
+                .andExpect(status().isBadRequest());
+//        SodaDTO sodaDTO = SodaBuilderDTO.builder().build().toSodaDTO();
+//        sodaDTO.setFlavor(null);
+//        System.out.println(sodaDTO.toString());
 //        mockMvc.perform(post(SODA_API_URL_PATH)
 //                .contentType(MediaType.APPLICATION_JSON)
-//                .content(asJsonString(beerDTO)))
+//                .content(asJsonString(sodaDTO)))
 //                .andExpect(status().isBadRequest());
-////        SodaDTO sodaDTO = SodaBuilderDTO.builder().build().toSodaDTO();
-////        sodaDTO.setFlavor(null);
-////        System.out.println(sodaDTO.toString());
-////        mockMvc.perform(post(SODA_API_URL_PATH)
-////                .contentType(MediaType.APPLICATION_JSON)
-////                .content(asJsonString(sodaDTO)))
-////                .andExpect(status().isBadRequest());
-//    }
+    }
 
     @Test
     void whenPOSTIsCalledThenSodaIsCreated() throws Exception{

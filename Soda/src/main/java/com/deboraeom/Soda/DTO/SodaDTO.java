@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 import javax.validation.constraints.Max;
@@ -23,9 +22,7 @@ public class SodaDTO {
     @NotNull
     private String name;
 
-
     @NotNull
-    @Size(min =1, max=200)
     @Max(500)
     private int max;
 
@@ -34,7 +31,6 @@ public class SodaDTO {
     private String flavor;
 
     @NotNull
-    @Max(100)
     private int quantity;
 
     @NotNull

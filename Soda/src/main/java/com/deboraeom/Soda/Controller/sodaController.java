@@ -8,6 +8,7 @@ import com.deboraeom.Soda.Exception.SodaStockExceededException;
 import com.deboraeom.Soda.Exception.SodaStockMissException;
 import com.deboraeom.Soda.Service.SodaService;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
