@@ -18,9 +18,7 @@ public class QuantityDTO {
 
 
     @NotNull
-    @Size(min =1, max=200)
     @Column(nullable = false)
-    @Max(500)
     private int quantity;
 
 }

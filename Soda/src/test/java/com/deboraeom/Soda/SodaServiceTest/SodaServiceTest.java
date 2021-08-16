@@ -142,14 +142,14 @@ public class SodaServiceTest {
         SodaDTO sodaDTO = SodaDTO.builder().build();
         Soda soda = sodaMapper.toModel(sodaDTO);
         Soda sodaToIncrement = soda;
-        int quantitytoIncrement=1;
-        sodaToIncrement.setQuantity(sodaDTO.getMax()-quantitytoIncrement);
+        int quantityToIncrement=1;
+        sodaToIncrement.setQuantity(sodaDTO.getMax()-quantityToIncrement);
 
         when(sodaRepository.findById(1L)).thenReturn(Optional.of(soda));
         when(sodaRepository.save(sodaToIncrement)).thenReturn(sodaToIncrement);
 
 
-        assertThat( sodaService.sodaIncrement(1L,quantitytoIncrement),is(equalTo(sodaMapper.toDTO(sodaToIncrement))));
+        assertThat( sodaService.sodaIncrement(1L,quantityToIncrement),is(equalTo(sodaMapper.toDTO(sodaToIncrement))));
 
     }
 

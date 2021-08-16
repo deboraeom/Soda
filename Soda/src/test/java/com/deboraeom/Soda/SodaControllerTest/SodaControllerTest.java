@@ -59,9 +59,6 @@ public class SodaControllerTest {
     }
 
     @Test
-   // esse teste esta falhando, mas ao testar manualmente no postman não falha, tenho que descobrir por que
-
-
     void whenPOSTIsCalledWithoutRequiredFieldThenAnErrorIsReturned() throws Exception{
 
 
@@ -73,13 +70,7 @@ public class SodaControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(beerDTO)))
                 .andExpect(status().isBadRequest());
-//        SodaDTO sodaDTO = SodaBuilderDTO.builder().build().toSodaDTO();
-//        sodaDTO.setFlavor(null);
-//        System.out.println(sodaDTO.toString());
-//        mockMvc.perform(post(SODA_API_URL_PATH)
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(asJsonString(sodaDTO)))
-//                .andExpect(status().isBadRequest());
+
     }
 
     @Test
